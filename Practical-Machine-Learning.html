@@ -24,9 +24,8 @@ label <- createDataPartition(training$classe, p = 0.7, list = FALSE)
 train <- training[label, ]
 test <- training[-label, ]
 
-From among 160 variables present in the dataset, some variables have nearly zero variance whereas some
-contain a lot of NA terms which need to be excluded from the dataset. Moreover, other 5 variables used for
-identification can also be removed.
+Found NA,#DIV/0! and blank values in the data. These are not valid observed values. From among 160 variables present in the dataset, some variables have nearly zero variance whereas some
+contain a lot of NA terms which need to be excluded from the dataset. Moreover, other 5 variables used for identification can also be removed.
 NZV <- nearZeroVar(train)
 train <- train[ ,-NZV]
 test <- test[ ,-NZV]
